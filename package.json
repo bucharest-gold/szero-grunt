@@ -1,0 +1,45 @@
+{
+  "name": "szero-grunt",
+  "version": "0.0.1",
+  "author": "Red Hat, Inc.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "eslint tasks/*.js",
+    "lint:fix": "eslint --fix tasks/*.js",
+    "prepublish": "nsp check",
+    "dependencyCheck": "szero . --ci",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bucharest-gold/szero-grunt.git"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "index.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/bucharest-gold/szero-grunt/issues"
+  },
+  "homepage": "https://github.com/bucharest-gold/szero-grunt",
+  "devDependencies": {
+    "eslint": "~3.8.1",
+    "eslint-config-semistandard": "~7.0.0",
+    "eslint-config-standard": "~6.2.0",
+    "eslint-plugin-promise": "~3.3.0",
+    "eslint-plugin-react": "~6.4.1",
+    "eslint-plugin-standard": "~2.0.1",
+    "nsp": "~2.6.2",
+    "standard-version": "^3.0.0"
+  },
+  "gitHubUser": "Daniel Bevenius",
+  "description": "Grunt plugin for Sub Zero",
+  "keywords": [
+    "plugin"
+  ],
+  "dependencies": {
+    "szero": "0.5.1"
+  }
+}
