@@ -18,7 +18,7 @@ Sub Zero dependency search.
 
 ## Installation
 
-    npm install --save-dev szero-grunt
+    $ npm install --save-dev szero-grunt
 
 ## Usage
 
@@ -28,7 +28,7 @@ This is done by adding the following line in `Gruntfile.js`
      grunt.loadNpmTasks('szero');
 
 ### Configure the plugin
-This is done by adding the `grunt.initConfig` section in `Gruntfile.js`
+This is done by adding a property to `grunt.initConfig` in `Gruntfile.js`
 
     szero: {
       directory: '.',
@@ -39,8 +39,8 @@ This is done by adding the `grunt.initConfig` section in `Gruntfile.js`
       summary: false
     } 
 
-The above values are the default value and you are only required to list the you want to override. If you
-are happy with the default you don't need a configuration at all.
+The above values are the default values and you are only required to list the ones you want to override. If you
+are happy with the defaults you don't need a configuration at all.
 
 ### Usage
 With the configuration above running is simply a matter of:
@@ -50,6 +50,10 @@ With the configuration above running is simply a matter of:
 The configuration options can be overriden on the grunt command line, for example:
 
     $ grunt szero --file --filename=somefile.txt
+
+To see the available options:
+
+    $ grunt szero --options
 
 ## Contributing
 

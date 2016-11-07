@@ -5,6 +5,17 @@ const szero = require('szero');
 
 module.exports = function (grunt) {
   grunt.registerTask(taskName, 'Sub Zero dependency search', function () {
+    if (grunt.option('options')) {
+      grunt.log.writeln('szero version: ' + require('szero/package.json').version);
+      grunt.log.writeln('Options: ');
+      grunt.log.writeln('--file', 'enable file reporter');
+      grunt.log.writeln('--filename <filename>', 'change the default filename');
+      grunt.log.writeln('--ci', 'enables process.exit() when unused dependency found');
+      grunt.log.writeln('--dev', 'enables devDependencies processing.');
+      grunt.log.writeln('--summary', 'enables summary report');
+      return true;
+    }
+
     const taskConfig = grunt.config.get('szero') || {};
     var options = grunt.config.merge({
       'szero': {
@@ -13,7 +24,8 @@ module.exports = function (grunt) {
         dev: grunt.option('dev') || taskConfig.dev || false,
         fileReporter: grunt.option('file') || taskConfig.file || false,
         filename: grunt.option('filename') || taskConfig.filename || 'szero.txt',
-        summary: grunt.option('summary') || taskConfig.summary || false
+        summary: grunt.option('summary') || taskConfig.summary || false,
+        help: grunt.option('usage')
       }
     }).szero;
     options.consoleReporter = !options.fileReporter;
